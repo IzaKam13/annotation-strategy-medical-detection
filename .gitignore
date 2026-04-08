@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+env/
+venv/
+.venv/
+conda-env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Data (IMPORTANT)
+data/raw/
+data/processed/
+
+# Outputs (models, results)
+outputs/
+runs/
+
+# Large files
+*.pt
+*.pth
+
+# Logs
+*.log
