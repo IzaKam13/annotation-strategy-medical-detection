@@ -54,12 +54,13 @@ Annotations are based on existing labeled datasets and are used to evaluate anno
 
 ### Annotation Variants
 
-| ID | Tool         | Method       | Description                                       |
-| -- | ------------ | ------------ | ------------------------------------------------- |
-| V1 | CVAT         | Manual       | Bounding boxes drawn manually using mask guidance |
-| V2 | Label Studio | Manual       | Same task using Label Studio                      |
-| V3 | CVAT         | SAM-assisted | SAM-generated masks converted to bounding boxes   |
-| V4 | Label Studio | SAM-assisted | (optional) SAM + manual refinement                |
+| ID | Tool         | Method       | Description                                                    |
+| -- | ------------ | ------------ | -------------------------------------------------------------- |
+| V0 | None         | Mask -> bbox | Bounding boxes generated automatically from ground truth masks |
+| V1 | CVAT         | Manual       | Bounding boxes drawn manually using mask guidance              |
+| V2 | Label Studio | Manual       | Same task using Label Studio                                   |
+| V3 | CVAT         | SAM-assisted | SAM-generated masks converted to bounding boxes                |
+| V4 | Label Studio | SAM-assisted | (optional) SAM + manual refinement                             |
 
 ---
 
@@ -102,8 +103,12 @@ annotation-strategy-medical-detection/
 │   └── examples/
 │
 ├── src/
-│   ├── data_processing.py
+│   ├── download_dataset.py
+│   ├── inspect_dataset.py
+│   ├── check_mask.py
 │   ├── mask_to_bbox.py
+│   ├── visualize_bbox.py
+|   ├── data_processing.py
 │   ├── train.py
 │   └── evaluate.py
 │
@@ -116,6 +121,9 @@ annotation-strategy-medical-detection/
 ## Results
 
 > *To be filled during experimentation*
+Ground truth masks are sometimes conservative and do not fully cover
+all visually apparent tumor regions. This may affect bounding box quality
+and model performance.
 
 ### Quantitative Results
 
@@ -184,13 +192,15 @@ This project demonstrates:
 ## Installation
 
 ```bash
-git clone <repo_url>
-cd <repo_name>
+git clone https://github.com/IzaKam13/annotation-strategy-medical-detection
+cd annotation-strategy-medical-detection
 pip install -r requirements.txt
 ```
 
 ---
 
-## Status
+## Progress
 
-🚧 Work in progress — results and analysis will be updated during development
+### Completed
+- Dataset inspection
+- Mask-to-bounding-box conversion
