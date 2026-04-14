@@ -204,3 +204,5 @@ pip install -r requirements.txt
 ### Completed
 - Dataset inspection
 - Mask-to-bounding-box conversion
+- YOLO dataset generation (V0 baseline)
+- Initial model training (V0)
