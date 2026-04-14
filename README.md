@@ -103,14 +103,16 @@ annotation-strategy-medical-detection/
 │   └── examples/
 │
 ├── src/
-│   ├── download_dataset.py
-│   ├── inspect_dataset.py
-│   ├── check_mask.py
-│   ├── mask_to_bbox.py
-│   ├── visualize_bbox.py
-|   ├── data_processing.py
-│   ├── train.py
-│   └── evaluate.py
+│   ├── download_dataset.py # Download BUSI dataset
+│   ├── inspect_dataset.py # Explore dataset structure
+│   ├── check_mask.py # Validate masks (empty vs non-empty)
+│   ├── mask_to_bbox.py # Convert masks to bounding boxes
+│   ├── generate_yolo_from_masks.py # Create YOLO dataset from masks
+│   ├── validate_yolo_labels.py # Sanity check YOLO labels
+│   ├── visualize_bbox.py # Visualize bounding boxes
+│   ├── debug_subset_bboxes.py # Debug / sample visualization
+│   ├── train.py # Train YOLO model
+│   └── evaluate.py # Evaluate model performance
 │
 ├── README.md
 └── requirements.txt
